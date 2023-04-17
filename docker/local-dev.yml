@@ -1,18 +1,18 @@
 version: "3.1"
 
 services:
-  yummily_db:
-    container_name: yummily_db
+  start-project_db:
+    container_name: start-project_db
     image: postgres
     restart: always
     ports:
       - 5433:5432
     environment:
-      POSTGRES_DB: yummily
-      POSTGRES_USER: yummily
+      POSTGRES_DB: start-project
+      POSTGRES_USER: start-project
       POSTGRES_PASSWORD: s3cr3t
     volumes:
-      - local_yummily_db:/var/lib/postgresql/data
+      - local_start-project_db:/var/lib/postgresql/data
 
   adminer:
     image: adminer
@@ -21,4 +21,4 @@ services:
       - 8080:8080
 
 volumes:
-  local_yummily_db:
+  local_start-project_db:
